@@ -13,7 +13,11 @@
         .state('signup', {
           url: '/signup',
           templateUrl: 'signup.html'
-        });
+        })
+        .state('login', {
+          url: '/login',
+          templateUrl: 'login.html'
+        })
 
         $urlRouterProvider.otherwise('/');
 
