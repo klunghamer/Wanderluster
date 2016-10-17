@@ -4,26 +4,19 @@
 
 User Schema:
 * firstName: String
-
 * lastName: String
-
--email: String
-
--password: String
-
--createdAt: Date
-
--updatedAt: Date
-
--placesToVist: [Place Schema]
-
--placesVisited: [Place Schema]
+* email: String
+* password: String
+* createdAt: Date
+* updatedAt: Date
+* placesToVist: [Place Schema]
+* placesVisited: [Place Schema]
 
 Place Schema:
--city: String
--country: String
--weatherDesc: String
--temp: Number
--humidity: Number
--icon: png file
+* city: String
+* country: String
+* weatherDesc: String
+* temp: Number
+* humidity: Number
+* icon: png file
 
