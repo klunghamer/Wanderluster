@@ -1,16 +1,26 @@
 (function() {
-  var app = angular.module('wanderluster')
+  angular.module('wanderluster', ['ui.router'])
+    .config(AuthRouter);
 
-  app.controller('MainCtrl', function($http) {
+    AuthRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
 
-    $http.get('/login')
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(err) {
-        console.log(err);
-      })
-  })
+    function AuthRouter($stateProvider, $urlRouterProvider, $locationProvider) {
+      $stateProvider
+        .state('home', {
+          url: '/',
+          templateUrl: 'home.html'
+        })
+        .state('signup', {
+          url: '/signup',
+          templateUrl: 'signup.html'
+        });
 
+        $urlRouterProvider.otherwise('/');
+
+        $locationProvider.html5Mode({
+          enabled: true,
+          requireBase: false
+        })
+      }
 
 })()
