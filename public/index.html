@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="wanderluster">
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script> -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/router.js"></script>
+
   </head>
-  <body ng-app="wanderluster">
-    {{1 + 1}}
+  <body>
+    {{2 + 3}}
+  <!-- <div ng-controller="MainCtrl as vm"> -->
+    <main ui-view></main>
+  <!-- </div> -->
   </body>
 </html>
