@@ -3,10 +3,9 @@
 ###Entity Relationship Diagram - User and Place Schemas
 
 User Schema:
+* firstName: String
 
--firstName: String
-
--lastName: String
+* lastName: String
 
 -email: String
 
