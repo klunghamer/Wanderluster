@@ -15,10 +15,13 @@
    <link rel="icon" type="image/png" href="http://i63.tinypic.com/u0e11.png" />
 
   </head>
-  <body>
+  <body ng-controller="usersController as users">
 <!--HEADER -->
   <div class="header-wrapper">
     <header id="header"> <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a> |  <a ui-sref="profile">Profile</a>
+      <div ng-if="users.currentUser">
+          there is a user!!
+      </div>
     </header>
 
   </div>
