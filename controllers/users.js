@@ -50,8 +50,28 @@ router.post('/', function(req, res){
     })
     return user[0].save();
   })
-  .then(function(response){
-    console.log('response', response);
+})
+
+router.put('/:placeId', function(req, res){
+  // console.log(req);
+  console.log('put req.body ', req.body);
+  // console.log('placeId', req.params.placeId);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    console.log(user);
+    var place = user.placesToVisit.id(req.params.placeId);
+    // console.log(req);
+    // console.log('/////PALCE ', place);
+    place.city = req.body.city;
+    place.country = req.body.country;
+    place.temp = req.body.temp;
+    place.humidity = req.body.humidity;
+    place.weatherDesc = req.body.weatherDesc;
+    return user.save();
+    // res.json({ user : user });
+  })
+  .then(function(user){
+    res.json({ user : user });
   })
 })
 
