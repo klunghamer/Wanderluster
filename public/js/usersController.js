@@ -32,6 +32,7 @@
       .then(function(response) {
         console.log('response', response);
         console.log(response.data);
+        $state.go('userProfile', {url: '/userProfile'});
       })
       .catch(function(err) {
         console.log(err);
