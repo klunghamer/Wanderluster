@@ -55,4 +55,15 @@ router.post('/', function(req, res){
   })
 })
 
+router.put('/:placeId', function(req, res){
+  // console.log(req);
+  console.log('put req.body ', req.body);
+  // console.log('placeId', req.params.placeId);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    console.log(user);
+  })
+
+})
+
 module.exports = router;
