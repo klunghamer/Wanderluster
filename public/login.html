@@ -1,0 +1,23 @@
+<h2>Login</h2>
+
+<div ng-controller="usersController as users">
+  <div class="row">
+    <form class="col s6" ng-submit="users.login(user)">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" ng-model="user.username">
+          <label for="username">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate" ng-model="user.password">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Log in
+        <!-- <i class="material-icons right">send</i> -->
+      </button>
+    </form>
+  </div>
+</div>
