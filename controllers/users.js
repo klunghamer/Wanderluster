@@ -27,5 +27,13 @@ router.post('/signup', function(req,res) {
   });
 })
 
+router.post('/login', passport.authenticate('local'), function(req, res) {
+  req.session.save(function (err) {
+    if (err) return next(err);
+    // res.re('/todos')
+    res.json({status: 200, message: 'ok', user: req.user});
+  });
+});
+
 
 module.exports = router;
