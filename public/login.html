@@ -1,8 +1,12 @@
 <h2>Login</h2>
 
+
+<div id="container">
+<main id="center" class="column">
+
 <div ng-controller="usersController as users">
   <div class="row">
-    <form class="col s6" ng-submit="users.login(user)">
+    <form id="loginCss" class="col s6" ng-submit="users.login(user)">
       <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" class="validate" ng-model="user.username">
@@ -20,4 +24,6 @@
       </button>
     </form>
   </div>
+ </div>
+</main>
 </div>

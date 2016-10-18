@@ -59,10 +59,12 @@ passport.deserializeUser(User.deserializeUser());
 
 //Controllers
 var usersController = require('./controllers/users.js');
+var helpersController = require('./controllers/helpers.js')
 // var clothingController = require('./controllers/closet');
 
 //Routing
 app.use('/users', usersController);
+app.use('/helpers', helpersController)
 // app.use('/closet', clothingController);
 
 app.listen(process.env.PORT || 3000);
