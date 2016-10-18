@@ -41,7 +41,7 @@
     }
 
     this.add = function(vacation){
-
+      console.log(vacation);
     }
   };
 })()
