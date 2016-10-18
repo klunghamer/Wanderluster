@@ -2,9 +2,9 @@
   angular.module('wanderluster', ['ui.router'])
     .config(AuthRouter);
 
-    AuthRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
+    AuthRouter.$inject = ['$stateProvider', '$urlRouterProvider']
 
-    function AuthRouter($stateProvider, $urlRouterProvider, $locationProvider) {
+    function AuthRouter($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('home', {
           url: '/',
@@ -37,10 +37,6 @@
 
         $urlRouterProvider.otherwise('/');
 
-        $locationProvider.html5Mode({
-          enabled: true,
-          requireBase: false
-        })
       }
 
 })()
