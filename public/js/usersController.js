@@ -39,5 +39,9 @@
         console.log(err);
       })
     }
+
+    this.add = function(vacation){
+
+    }
   };
 })()
