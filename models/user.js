@@ -1,12 +1,13 @@
 var mongoose = require('mongoose');
-var mongooseValidate = require('mongoose-validate');
+// var validate = require('mongoose-validate');
 var PlaceSchema = require('./place').schema;
 var passportLocalMongoose = require('passport-local-mongoose');
+
 
 var UserSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
-  email: String, required: true, validate: [validate.email, 'invalid email address']
+  email: String,
   password: Number,
   createdAt: Date,
   updatedAt: Date,
