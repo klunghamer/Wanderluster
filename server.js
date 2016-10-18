@@ -65,4 +65,4 @@ var usersController = require('./controllers/users.js');
 app.use('/users', usersController);
 // app.use('/closet', clothingController);
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.PORT || 3000);
