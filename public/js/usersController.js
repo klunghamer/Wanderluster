@@ -6,15 +6,14 @@
     var self = this;
 
     this.createUser = function(user) {
-      console.log(user);
-      $http.post('/users/signup', {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        password: user.password
-      })
-      .then(function(response){
-        self.user = response.data.user
+      return $http({
+        url: '/users/signup',
+        method: "POST",
+        data: user
+      }).then(function(response){
+        console.log('res');
+        console.log(response);
+        // self.user = response.data.user
       })
       .catch(function(err){
         console.log(err);

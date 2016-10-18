@@ -18,6 +18,7 @@ app.use(logger('dev'));
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 //Static Assets
@@ -36,8 +37,8 @@ db.once('open', function() {
 })
 
 //Config heroku
-// var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/wanderluster';
-// mongoose.connect(mongoURI);
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/wanderluster';
+mongoose.connect(mongoURI);
 
 
 //Passport
@@ -57,11 +58,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //Controllers
-var usersController = require('./controllers/users');
+var usersController = require('./controllers/users.js');
 // var clothingController = require('./controllers/closet');
 
 //Routing
 app.use('/users', usersController);
 // app.use('/closet', clothingController);
 
-app.listen(3000); //process env
+app.listen(process.env.port || 3000);
