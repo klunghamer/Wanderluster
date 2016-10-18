@@ -42,6 +42,14 @@
 
     this.add = function(vacation){
       console.log(vacation);
+      return $http({
+        url: '/users',
+        method: 'POST',
+        data: vacation
+      })
+      .then(function(response){
+        console.log(response);
+      })
     }
   };
 })()

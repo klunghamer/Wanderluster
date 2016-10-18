@@ -35,5 +35,24 @@ router.post('/login', passport.authenticate('local'), function(req, res) {
   });
 });
 
+router.post('/', function(req, res){
+  // console.log(req.body);
+  var user = req.session.passport.user;
+  User.find({username: user}).exec()
+  .then(function(user){
+    // console.log(user);
+    user[0].placesToVisit.push({
+      city: req.body.city,
+      country: req.body.country,
+      weatherDesc: req.body.weatherDesc,
+      temp: req.body.temp,
+      humidity: req.body.humidity
+    })
+    return user[0].save();
+  })
+  .then(function(response){
+    console.log('response', response);
+  })
+})
 
 module.exports = router;
