@@ -32,12 +32,23 @@
       .then(function(response) {
         self.user = response.data.user;
         // $state.go('userProfile', {url: '/userProfile'});
-
         // console.log('self', self);
         console.log(self.user.firstName);
       })
       .catch(function(err) {
         console.log(err);
+      })
+    }
+
+    this.add = function(vacation){
+      console.log(vacation);
+      return $http({
+        url: '/users',
+        method: 'POST',
+        data: vacation
+      })
+      .then(function(response){
+        console.log(response);
       })
     }
   };

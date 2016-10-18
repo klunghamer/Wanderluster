@@ -22,6 +22,18 @@
           url: '/profile',
           templateUrl: 'profile.html'
         })
+        .state('addpage', {
+          url: '/addpage',
+          templateUrl: 'addpage.html'
+        })
+        .state('tovisit', {
+          url: '/tovisit',
+          templateUrl: 'tovisit.html'
+        })
+        .state('visited', {
+          url: '/visited',
+          templateUrl: 'visited.html'
+        })
 
         $urlRouterProvider.otherwise('/');
 
