@@ -1,6 +1,4 @@
 # Wanderluster
-<<<<<<< HEAD
-=======
 
 ###Entity Relationship Diagram - User and Place Schemas
 
@@ -21,5 +19,3 @@ Place Schema:
 * temp: Number
 * humidity: Number
 * icon: png file
-
->>>>>>> master
