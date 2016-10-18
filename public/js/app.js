@@ -22,6 +22,10 @@
           url: '/profile',
           templateUrl: 'profile.html'
         })
+        .state('addpage', {
+          url: '/addpage',
+          templateUrl: 'addpage.html'
+        })
 
         $urlRouterProvider.otherwise('/');
 
