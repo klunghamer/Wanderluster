@@ -1,0 +1,37 @@
+<h3>Add Destination</h3>
+
+<div ng-controller="usersController as users">
+  <div class="row">
+    <form class="col s12" ng-submit="users.add(vacation)">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="city" type="text" class="validate" ng-model="vacation.city">
+          <label for="city">City</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="country" type="text" class="validate" ng-model="vacation.country">
+          <label for="country">Country</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="weatherDesc" type="text" class="validate" ng-model="vacation.weatherDesc">
+          <label for="weatherDesc">Weather Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="temp" type="text" class="validate" ng-model="vacation.temp">
+          <label for="temp">Average Temperature</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="humidity" type="text" class="validate" ng-model="vacation.humidity">
+          <label for="temp">Average Humidity</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Add
+      </button>
+    </form>
+  </div>
