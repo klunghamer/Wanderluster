@@ -30,10 +30,11 @@
         data: user
       })
       .then(function(response) {
-        console.log('response', response);
-        $state.go('userProfile', {url: '/userProfile'});
-        console.log('user', response.data.user);
-        self.user = response.data.user
+        self.user = response.data.user;
+        // $state.go('userProfile', {url: '/userProfile'});
+
+        // console.log('self', self);
+        console.log(self.user.firstName);
       })
       .catch(function(err) {
         console.log(err);

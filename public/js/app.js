@@ -18,9 +18,9 @@
           url: '/login',
           templateUrl: 'login.html'
         })
-        .state('userProfile', {
-          url: '/userProfile',
-          templateUrl: 'userProfile.html'
+        .state('profile', {
+          url: '/profile',
+          templateUrl: 'profile.html'
         })
 
         $urlRouterProvider.otherwise('/');
