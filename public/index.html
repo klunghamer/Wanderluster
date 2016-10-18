@@ -13,8 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   </head>
   <body>
-    <!-- <div ng-controller="usersController as users"> -->
+    <header> <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a> |
+      <a ui-sref="profile">Profile</a>
+    </header>
+
+
       <main ui-view></main>
-    <!-- </div> -->
   </body>
 </html>
