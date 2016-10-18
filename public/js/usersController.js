@@ -31,13 +31,13 @@
       })
       .then(function(response) {
         console.log('response', response);
-        console.log(response.data);
         $state.go('userProfile', {url: '/userProfile'});
+        console.log('user', response.data.user);
+        self.user = response.data.user
       })
       .catch(function(err) {
         console.log(err);
       })
     }
-
   };
 })()
