@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html ng-app="wanderluster">
   <head>
-    <base href='/'>
     <meta charset="utf-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css" media="screen" title="no title">
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
@@ -11,14 +12,38 @@
     <script src="js/app.js"></script>
     <script type="text/javascript" src="js/usersController.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+   <link rel="icon" type="image/png" href="http://i63.tinypic.com/u0e11.png" />
+
   </head>
   <body>
-    <header> <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a> |
-      <a ui-sref="profile">Profile</a>
+<!--HEADER -->
+  <div class="header-wrapper">
+    <header id="header"> <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a> |  <a ui-sref="profile">Profile</a>
     </header>
+
+  </div>
+
     <a ui-sref="tovisit">To Visit</a> | <a ui-sref="visited">Visited</a> |
     <a ui-sref="profile">Profile</a>
 
+
       <main ui-view></main>
+
+
+
+<!--FOOTER -->
+      <div class="footer-wrapper">
+        <footer id="footer"><p>
+          <a class="footInfo" href="/home"><div> HOME  </div></a>
+          <a class="footInfo" href="/about"><div> ABOUT</div></a>
+          <a class="footInfo" href="/contact"><div> CONTACT US </div></a>
+          <a class="footInfo" href="/terms"><div> TERMS OF USE </div></a>
+          <a class="footInfo" href="/privacyPolicy"><div> PRIVACY POLICY </div></a>
+          <a class="footInfo" href="/advertising"><div> ADVERTISE WITH US </div></a></p>
+        </footer>
+      </div>
+
+
+  <div class="copyright"><p>&copy; 2017 Wanderluster.com<p></div>
   </body>
 </html>

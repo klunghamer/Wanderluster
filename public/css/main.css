@@ -1,0 +1,164 @@
+body {
+      min-width: 630px;
+      text-align: center;
+      width:100%;
+      height:100%;
+      font-family: 'Josefin Slab', serif;
+      background-color: ;
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      color: white;
+    }
+  .footInfo {
+      color: blue;
+  }
+  .footInfo:hover {
+      color: white;
+  }
+
+  .copyright {
+   position:fixed;
+   left:0px;
+   bottom:25px;
+   height:30px;
+   width:100%;
+   padding:5px;
+   font-size: 1.2em;
+
+}
+
+   /*IE 6 */
+   *html .copyright {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+  #footer {
+   position:fixed;
+   left:0px;
+   bottom:-85px;
+   height:30px;
+   width:100%;
+
+
+  }
+
+     /*IE 6 */
+     *html #footer {
+     position:absolute;
+     top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+  }
+    #container {
+     padding-left: 200px;
+     padding-right: 190px;
+      }
+
+    #container .column {
+      position: relative;
+      float: left;
+    }
+    #center {
+      padding: 10px 20px;
+      width: 100%;
+    }
+
+    #left {
+      width: 180px;
+      padding: 0 10px;
+      right: 240px;
+      margin-left: -100%;
+      border: 5px solid rgba(250, 250, 250, 0.4);
+      border-style: groove;
+
+    }
+
+    #right {
+      width: 130px;
+      padding: 0 10px;
+      margin-right: -100%;
+      border: 5px solid rgba(250, 250, 250, 0.4);
+      border-style: groove;
+}
+
+    /*FOOTER DATA*/
+    #footer {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      align-content: space-around;
+      clear: both;
+      margin-bottom: 10vh;
+      padding: 10px;
+    }
+
+    /* IE hack */
+    * html #left {
+      left: 150px;
+    }
+
+    /* Make the columns the same height as each other */
+    #container {
+      overflow: hidden;
+    }
+
+    /* Fix for the footer */
+    * html body {
+      overflow: hidden;
+    }
+
+    * html #footer-wrapper {
+      float: left;
+      position: relative;
+      width: 100%;
+      padding-bottom: 10010px;
+      margin-bottom: -10000px;
+    }
+
+    /************************************/
+    /**************Borders***************/
+    /************************************/
+
+    #header {
+      font-size: large;
+      padding: 1em;
+      background: rgba(250, 250, 250, 0.7);
+      border: 20px solid rgba(250, 250, 250, 0.4);
+      border-style: groove;
+
+    }
+    #footer {
+      font-size: large;
+      padding: 2em;
+      background: rgba(250, 250, 250, 0.7);
+      border: 20px solid rgba(250, 250, 250, 0.4);
+      border-style: groove;
+    }
+    /*#left {
+      background: rgba(250, 250, 250, 0.7);
+    }
+
+    #right {
+      background: rgba(250, 250, 250, 0.7);
+    }*/
+
+    /*#center {
+      background: rgba(250, 250, 250, 0.3);
+    }*/
+
+    /*#container .column {
+      padding-top: 1em;
+    }*/
+
+
+    /*FULL SCREEN BACKGROUND GRADIENT*/
+    html {
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 61%, #7db9e8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(61%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 61%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 61%,#7db9e8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 61%,#7db9e8 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 61%,#7db9e8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+    min-height: 100%;
+}
