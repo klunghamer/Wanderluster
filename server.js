@@ -24,7 +24,6 @@ app.use(express.static(__dirname + '/public'));
 //Mongoose
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost/closet');
 var db = mongoose.connection;
 db.on('error', function(err) {
   console.log(err);
