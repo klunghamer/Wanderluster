@@ -2,45 +2,45 @@
   angular.module('wanderluster', ['ui.router'])
     .config(AuthRouter);
 
-    AuthRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider']
+    AuthRouter.$inject = ['$stateProvider', '$urlRouterProvider']
 
-    function AuthRouter($stateProvider, $urlRouterProvider, $locationProvider) {
+    function AuthRouter($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: 'home.html'
+          templateUrl: '../partials/_home.html'
         })
         .state('signup', {
           url: '/signup',
-          templateUrl: 'signup.html'
+          templateUrl: '../partials/_signup.html'
         })
         .state('login', {
           url: '/login',
-          templateUrl: 'login.html'
+          templateUrl: '../partials/_login.html'
         })
         .state('profile', {
           url: '/profile',
-          templateUrl: 'profile.html'
+          templateUrl: '../partials/_profile.html'
         })
         .state('addpage', {
           url: '/addpage',
-          templateUrl: 'addpage.html'
+          templateUrl: '../partials/_addpage.html'
         })
         .state('tovisit', {
           url: '/tovisit',
-          templateUrl: 'tovisit.html'
+          templateUrl: '../partials/_tovisit.html'
         })
         .state('visited', {
           url: '/visited',
-          templateUrl: 'visited.html'
+          templateUrl: '../partials/_visited.html'
+        })
+        .state('editplace', {
+          url: '/editplace',
+          templateUrl: '../partials/_editplace.html'
         })
 
         $urlRouterProvider.otherwise('/');
 
-        $locationProvider.html5Mode({
-          enabled: true,
-          requireBase: false
-        })
       }
 
 })()

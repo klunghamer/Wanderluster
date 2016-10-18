@@ -5,6 +5,15 @@
   function usersController($http, $state){
     var self = this;
 
+    $http.get('/helpers/get-user')
+      .then(function(response) {
+        console.log(response)
+        self.currentUser = response.data.user;
+      })
+      .catch(function(err){
+        console.log('err', err)
+      })
+
     this.createUser = function(user) {
       return $http({
         url: '/users/signup',
@@ -31,7 +40,7 @@
       })
       .then(function(response) {
         self.user = response.data.user;
-        // $state.go('userProfile', {url: '/userProfile'});
+        $state.go('profile', {url: '/profile'});
         // console.log('self', self);
         console.log(self.user.firstName);
       })
