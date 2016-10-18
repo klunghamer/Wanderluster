@@ -31,10 +31,7 @@
       })
       .then(function(response) {
         self.user = response.data.user;
-        // $state.go('userProfile', {url: '/userProfile'});
-
-        // console.log('self', self);
-        console.log(self.user.firstName);
+        console.log(self.user);
       })
       .catch(function(err) {
         console.log(err);
