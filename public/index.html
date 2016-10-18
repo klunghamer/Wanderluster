@@ -15,20 +15,18 @@
    <link rel="icon" type="image/png" href="http://i63.tinypic.com/u0e11.png" />
 
   </head>
-  <body ng-controller="usersController as users">
+  <body>
 <!--HEADER -->
   <div class="header-wrapper">
     <header id="header"> <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a> |  <a ui-sref="profile">Profile</a>
-      <div ng-if="users.currentUser">
-          there is a user!!
-      </div>
     </header>
 
   </div>
 
     <a ui-sref="tovisit">To Visit</a> | <a ui-sref="visited">Visited</a> |
-    <a ui-sref="profile">Profile</a> | <a ui-sref="addpage">Vacations</a>
-
+    <a ui-sref="profile">Profile</a>
+    
+    </div>
 
       <main ui-view></main>
 
