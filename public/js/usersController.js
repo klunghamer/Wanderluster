@@ -15,6 +15,7 @@
         console.log('res');
         console.log(response);
         // self.user = response.data.user
+        $state.go('login', {url: '/login'});
       })
       .catch(function(err){
         console.log(err);
