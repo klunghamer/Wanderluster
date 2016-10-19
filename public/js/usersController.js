@@ -54,11 +54,31 @@
       })
     }
 
-    this.add = function(place){
+    this.add = function(city){
       return $http({
-        url: '/users',
-        method: 'POST',
-        data: place
+        url: 'http://api.openweathermap.org/data/2.5/weather',
+        method: 'GET',
+        params: {
+          q: city,
+          appid: '74136e42b44bd02393d5ad566f3e74a3'
+        }
+      })
+      .then(function(city) {
+        var place = {};
+        place.city = city.data.name;
+        place.country = city.data.sys.country;
+        place.temp = (Number(city.data.main.temp) * 9/5) - 459.67;
+        place.weatherDesc = city.data.weather[0].description;
+        place.humidity = city.data.main.humidity;
+        place.icon = city.data.weather[0].icon;
+        return place;
+      })
+      .then(function(place){
+        return $http({
+          url: '/users',
+          method: 'POST',
+          data: place
+        })
       })
       .then(function(response){
         console.log(response);
@@ -82,11 +102,32 @@
     }
 
     /// EDIT ///
-    this.edit = function(place){
+    this.edit = function(city){
       return $http({
-        url: `/users/${$state.params.place._id}`,
-        method: 'PUT',
-        data: place
+        url: 'http://api.openweathermap.org/data/2.5/weather',
+        method: 'GET',
+        params: {
+          q: city,
+          appid: '74136e42b44bd02393d5ad566f3e74a3'
+        }
+      })
+      .then(function(city) {
+        var place = {};
+        place.city = city.data.name;
+        place.country = city.data.sys.country;
+        place.temp = (Number(city.data.main.temp) * 9/5) - 459.67;
+        place.weatherDesc = city.data.weather[0].description;
+        place.humidity = city.data.main.humidity;
+        place.icon = city.data.weather[0].icon;
+        return place;
+      })
+      // console.log($state.params.place._id);
+      .then(function(place){
+        return $http({
+          url: `/users/${$state.params.place._id}`,
+          method: 'PUT',
+          data: place
+        })
       })
       .then(function(response){
         $state.go('tovisit', {url: '/tovisit'});
@@ -110,5 +151,6 @@
         console.log(err);
       })
     }
+
   };
 })()

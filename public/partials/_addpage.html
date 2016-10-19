@@ -1,6 +1,6 @@
 <h3>Add Destination</h3>
 
-<div ng-controller="usersController as users">
+<!-- <div ng-controller="usersController as users">
   <div class="row">
     <form class="col s12" ng-submit="users.add(vacation)">
       <div class="row">
@@ -34,8 +34,19 @@
       <button class="btn waves-effect waves-light" type="submit">Add
       </button>
     </form>
-  </div>
+  </div> -->
 
+  <div ng-controller="usersController as users">
+    <form ng-submit="users.add(city)">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="city" type="text" class="validate" ng-model="city">
+          <label for="city">City</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Home</button>
+    </form>
+  </div>
 
 
 

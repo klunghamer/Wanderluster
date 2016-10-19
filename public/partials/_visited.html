@@ -1,8 +1,6 @@
 <h2>Places You Visited</h2>
 
 
-
-
 <!--==========** MAIN FOOTER **===========-->
     <footer class="page-footer teal">
       <div class="container">
@@ -55,9 +53,10 @@
       <p>{{place.weatherDesc}}</p>
       <p>{{place.temp}}</p>
       <p>{{place.humidity}}</p>
-      <a ui-sref="editplace({place:place})">
+      <img src="http://openweathermap.org/img/w/{{place.icon}}.png">
+      <!-- <a ui-sref="editplace({place:place})">
         <button type="submit">Edit</button>
-      </a>
+      </a> -->
     </form>
   </div>
 </div>

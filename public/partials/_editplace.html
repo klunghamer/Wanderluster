@@ -1,5 +1,5 @@
-
-  <div ng-controller="usersController as users">
+<h3>Edit Destination</h3>
+  <!-- <div ng-controller="usersController as users">
     <div class="row">
       <form class="col s12" ng-submit="users.edit($state.params)">
         <div class="row">
@@ -32,14 +32,26 @@
         </div>
         <button class="btn waves-effect waves-light" type="submit">Save Edit
         </button>
-      </form>
-      <button type="submit" ng-click="users.delete($state.params)">
-        Delete
-      </button>
-      <button type="submit" ng-click="users.addToVisited($state.params)">
-        Move
-      </button>
-    </div>
+      </form> -->
+      <div ng-controller="usersController as users">
+        <form ng-submit="users.edit(city)">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="city" type="text" class="validate" ng-model="city">
+              <label for="city">City</label>
+            </div>
+          </div>
+          <button class="btn waves-effect waves-light" type="submit">Save</button>
+        </form>
+
+        <button type="submit" ng-click="users.delete($state.params)">
+          Delete
+        </button>
+        <button type="submit" ng-click="users.addToVisited($state.params)">
+          Visited!
+        </button>
+      </div>
+
 
 
 
