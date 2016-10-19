@@ -41,16 +41,17 @@
               <label for="city">City</label>
             </div>
           </div>
-          <button class="btn waves-effect waves-light" type="submit">Edit</button>
+          <button class="btn waves-effect waves-light" type="submit">Save</button>
         </form>
+
+        <button type="submit" ng-click="users.delete($state.params)">
+          Delete
+        </button>
+        <button type="submit" ng-click="users.addToVisited($state.params)">
+          Visited!
+        </button>
       </div>
-      <button type="submit" ng-click="users.delete($state.params)">
-        Delete
-      </button>
-      <button type="submit" ng-click="users.addToVisited($state.params)">
-        Move
-      </button>
-    </div>
+
 
 
 
