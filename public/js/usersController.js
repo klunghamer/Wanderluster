@@ -46,7 +46,7 @@
         data: user
       })
       .then(function(response) {
-        self.user = response.data.user;
+        // self.currentUser = response.data.user;
         $state.go('profile', {url: '/profile'});
         console.log('self', self);
         // console.log(self.user.firstName);
