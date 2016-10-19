@@ -9,10 +9,11 @@
               <div ng-repeat="place in users.currentUser.placesToVisit">
                 <form class="" action="#">
                   <h5>{{place.city}}</h5>
-                  <p>{{place.country}}</p>
-                  <p>{{place.weatherDesc}}</p>
-                  <p>{{place.temp}}</p>
-                  <p>{{place.humidity}}</p>
+                  <p>country: {{place.country}}</p>
+                  <p>forecast: {{place.weatherDesc}}</p>
+                  <p>current temperature: {{place.temp | number:0}}&deg </p>
+                  <p>humidity: {{place.humidity}}%</p>
+                  <p><img src="{{place.icon}}.png"></p>
                   <a ui-sref="editplace({place:place})">
                     <button class="btn-large waves-effect waves-light teal lighten-1" type="submit">Edit</button>
                   </a>

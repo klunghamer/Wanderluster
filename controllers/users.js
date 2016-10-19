@@ -44,22 +44,21 @@ router.delete('/logout', function (req,res) {
 
 //// ADD NEW PLACE ////
 router.post('/', function(req, res){
-  // console.log(req.body);
+  console.log(req.body);
   var user = req.session.passport.user;
   User.find({username: user}).exec()
   .then(function(user){
-    // console.log(user);
     user[0].placesToVisit.push({
       city: req.body.city,
       country: req.body.country,
       weatherDesc: req.body.weatherDesc,
       temp: req.body.temp,
-      humidity: req.body.humidity
+      humidity: req.body.humidity,
+      icon: req.body.icon
     })
     return user[0].save();
   })
   .then(function(user) {
-    // console.log('user>>>', user);
     res.json({ user : user });
   })
   .catch(function(err) {
