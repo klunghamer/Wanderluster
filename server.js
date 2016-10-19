@@ -25,6 +25,7 @@ app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
 // app.use(express.static(path.join(__dirname,'public')));
 
+
 //Mongoose
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
@@ -33,7 +34,7 @@ db.on('error', function(err) {
   console.log(err);
 })
 db.once('open', function() {
-  console.log('database connected!');
+  console.log('Database Connected!');
 })
 
 //Config heroku
@@ -67,4 +68,8 @@ app.use('/users', usersController);
 app.use('/helpers', helpersController)
 // app.use('/closet', clothingController);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("=============================");
+  console.log("SERVER LISTENING ON PORT 3000");
+  console.log("=============================");
+});
