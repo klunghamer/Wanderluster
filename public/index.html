@@ -35,12 +35,13 @@
 <!--HEADER -->
   <div class="header-wrapper">
     <header id="header">
+
       <div ng-controller="usersController as users">
         <div ng-hide="users.currentUser">
           <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a>
         </div>
         <div ng-show="users.currentUser">
-          <a ui-sref="profile">Profile</a> | <a href="#">Log out</a>
+          <a ui-sref="profile">Profile</a> | <a ng-click="users.logout(users.currentUser)">Log out</a>
         </div>
       </div>
     </header>
