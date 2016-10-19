@@ -5,12 +5,12 @@
   function usersController($http, $state){
     var self = this;
 
-    this.editedPlace = null;
+    // this.editedPlace = null;
 
-    this.setPlaceToEdit = function(place) {
-      self.editedPlace = place;
-      console.log(this.editedPlace);
-    }
+    // this.setPlaceToEdit = function(place) {
+    //   self.editedPlace = place;
+    //   console.log(this.editedPlace);
+    // }
 
     $http.get('/helpers/get-user')
       .then(function(response) {
@@ -47,12 +47,23 @@
       })
       .then(function(response) {
         self.user = response.data.user;
-        $state.go('profile', {url: '/profile'});
+        $state.go('profile', {url: '/profile'}, {reload: true});
         console.log('self', self);
         // console.log(self.user.firstName);
       })
       .catch(function(err) {
         console.log(err);
+      })
+    }
+
+    this.logout = function(user) {
+      return $http({
+        url:'/users/logout',
+        method: 'DELETE',
+        data: user
+      })
+      .then(function(response) {
+        console.log(response);
       })
     }
 
