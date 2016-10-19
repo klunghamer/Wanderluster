@@ -82,6 +82,7 @@ router.put('/:placeId', function(req, res){
     place.temp = req.body.temp;
     place.humidity = req.body.humidity;
     place.weatherDesc = req.body.weatherDesc;
+    place.icon = req.body.icon;
     return user.save();
   })
   .then(function(user){

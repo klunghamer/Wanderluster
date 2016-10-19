@@ -68,12 +68,9 @@
         place.city = city.data.name;
         place.country = city.data.sys.country;
         place.temp = (Number(city.data.main.temp) * 9/5) - 459.67;
-        console.log(place.temp);
         place.weatherDesc = city.data.weather[0].description;
         place.humidity = city.data.main.humidity;
-        console.log(place.weatherDesc, place.humidity);
         place.icon = city.data.weather[0].icon;
-        console.log(place);
         return place;
       })
       .then(function(place){
@@ -105,12 +102,33 @@
     }
 
     /// EDIT ///
-    this.edit = function(place){
+    this.edit = function(city){
+      return $http({
+        url: 'http://api.openweathermap.org/data/2.5/weather',
+        method: 'GET',
+        params: {
+          q: city,
+          appid: '74136e42b44bd02393d5ad566f3e74a3'
+        }
+      })
+      .then(function(city) {
+        var place = {};
+        place.city = city.data.name;
+        place.country = city.data.sys.country;
+        place.temp = (Number(city.data.main.temp) * 9/5) - 459.67;
+        place.weatherDesc = city.data.weather[0].description;
+        place.humidity = city.data.main.humidity;
+        place.icon = city.data.weather[0].icon;
+        return place;
+      })
+      // console.log($state.params.place._id);
+      .then(function(place){
         return $http({
           url: `/users/${$state.params.place._id}`,
           method: 'PUT',
           data: place
         })
+      })
       .then(function(response){
         $state.go('tovisit', {url: '/tovisit'});
       })
@@ -133,26 +151,6 @@
         console.log(err);
       })
     }
-
-    // this.hometown = function(city){
-    //   console.log(city);
-    //   return $http({
-    //     url: 'http://api.openweathermap.org/data/2.5/weather',
-    //     method: 'GET',
-    //     params: {
-    //       q: city,
-    //       appid: '74136e42b44bd02393d5ad566f3e74a3'
-    //     }
-    //   })
-    //   .then(function(result) {
-    //     var temp = (Number(result.data.main.temp) * 9/5) - 459.67;
-    //     console.log(temp);
-    //     var weatherDesc = result.data.weather[0].description;
-    //     var humidity = result.data.main.humidity;
-    //     console.log(weatherDesc, humidity);
-    //     var icon = result.data.weather[0].icon;
-    //   })
-    // }
 
   };
 })()
