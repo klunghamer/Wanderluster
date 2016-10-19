@@ -79,6 +79,20 @@ p {
     width: 100%;
   }
 
+#resize {
+  width: 10vw;
+}
+
+.cityCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*.cityCards:hover {
+  transform: scale(1.10);
+}*/
+
 @media only screen and (max-width : 992px) {
   .custom-container .section {
     position: absolute;
