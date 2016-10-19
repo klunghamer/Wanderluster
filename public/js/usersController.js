@@ -65,6 +65,10 @@
       })
       .then(function(response){
         console.log(response);
+        $state.go('tovisit', {url: '/tovisit'});
+      })
+      .catch(function(err) {
+        console.log(err);
       })
     }
 
@@ -82,6 +86,9 @@
         console.log(response);
         $state.go('tovisit', {url: '/tovisit'});
         // console.log('id', place._id);
+      })
+      .catch(function(err) {
+        console.log(err);
       })
     }
   };

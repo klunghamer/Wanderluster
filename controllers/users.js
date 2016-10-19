@@ -50,6 +50,13 @@ router.post('/', function(req, res){
     })
     return user[0].save();
   })
+  .then(function(user) {
+    console.log('user>>>', user);
+    res.json({ user : user });
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
 })
 
 router.put('/:placeId', function(req, res){
@@ -68,10 +75,13 @@ router.put('/:placeId', function(req, res){
     place.humidity = req.body.humidity;
     place.weatherDesc = req.body.weatherDesc;
     return user.save();
-    // res.json({ user : user });
   })
   .then(function(user){
     res.json({ user : user });
+    console.log('user>>>', user);
+  })
+  .catch(function(err){
+    console.log(err);
   })
 })
 
