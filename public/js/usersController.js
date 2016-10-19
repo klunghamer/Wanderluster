@@ -86,7 +86,7 @@
     this.delete = function(place){
       // console.log($state.params.place);
       return $http({
-        url: `/users/${$state.params.place._id}`,
+        url: `/users/delete/${$state.params.place._id}`,
         method: 'DELETE',
         data: place
       })
@@ -100,7 +100,7 @@
     /// EDIT ///
     this.edit = function(place){
       // console.log(place);
-      console.log($state.params.place);
+      // console.log($state.params.place);
       // return $http.put(`/users/${$state.params.place._id}`, place)
       return $http({
         url: `/users/${$state.params.place._id}`,
@@ -108,7 +108,7 @@
         data: place
       })
       .then(function(response){
-        console.log(response);
+        // console.log(response);
         $state.go('tovisit', {url: '/tovisit'});
         // console.log('id', place._id);
       })

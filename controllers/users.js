@@ -74,7 +74,7 @@ router.put('/:placeId', function(req, res){
   // console.log('placeId', req.params.placeId);
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user){
-    console.log(user);
+    // console.log(user);
     var place = user.placesToVisit.id(req.params.placeId);
     // console.log(req);
     // console.log('/////PALCE ', place);
@@ -95,8 +95,18 @@ router.put('/:placeId', function(req, res){
 })
 
 //// DELETE ////
-router.delete('/:placeId', function(req, res){
-  console.log('delete is working');
+router.delete('/delete/:placeId', function(req, res){
+  // console.log("REQ BODY>>>>>>", req);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    // console.log(user);
+  })
 })
+
+
+
+
+
+
 
 module.exports = router;
