@@ -3,8 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <!--******************* CSS ********************-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css" media="screen" title="no title">
+    <!--*********************************************-->
+    <!--**************ANGULAR/JS/JQUERY**************-->
+    <!--*********************************************-->
     <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
@@ -12,10 +21,17 @@
     <script src="js/app.js"></script>
     <script type="text/javascript" src="js/usersController.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    <link rel="icon" type="image/png" href="http://i63.tinypic.com/u0e11.png" />
+</head>
+<!--*********************************************-->
+<!--*******************BODY**********************-->
+<!--*********************************************-->
 
-  </head>
+
   <body>
+
+
 <!--HEADER -->
   <div class="header-wrapper">
     <header id="header">
@@ -30,16 +46,90 @@
       </div>
     </header>
 
-  </div>
-
-    <a ui-sref="tovisit">To Visit</a> | <a ui-sref="visited">Visited</a> |
-
-    <a ui-sref="profile">Profile</a> | <a ui-sref="addpage">Add Destination</a>
-
+  <!--==========**HEADER===========-->
+    <nav class="teal">
+    <div class="header-wrapper">
+    <a href="#" class="brand-logo teal">WANDERLUSTER</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down teal">
+        <li><a ui-sref="signup">Sign up</a></li>
+        <li><a ui-sref="login">Log in</a></li>
+        <li> <a ui-sref="profile">Profile</a></li>
+      </ul>
     </div>
+  </nav>
 
-      <main ui-view></main>
 
+<!---======== SEARCH BAR=========-->
+<nav>
+   <div class="nav-wrapper">
+     <form>
+       <div class="input-field white">
+         <input id="search" type="search" required>
+         <label for="search" placeholder="search"><i class="material-icons #ffcdd2 red lighten-4">search</i></label>
+         <i class="material-icons #ffcdd2 red lighten-4">close</i>
+       </div>
+     </form>
+   </div>
+  </nav>
+  <br>
+  <br>
+
+  <!--==========**ACTION LINKS**===========-->
+<!-- <div id="actionLinks">
+
+  <a ui-sref="tovisit">To Visit</a> | <a ui-sref="visited">Visited</a> |
+
+  <a ui-sref="profile">Profile</a> | <a ui-sref="addpage">Add Destination</a>
+
+</div> -->
+
+<!--*********** Dropdown Structure **************-->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a ui-sref="tovisit">To Visit</a></li>
+  <li><a ui-sref="visited">Visited</a></li>
+  <li class="divider"></li>
+  <li><a ui-sref="profile">Profile</a></li>
+  <li><a ui-sref="addpage">Add Destination</a></li>
+</ul>
+
+<nav>
+  <!-- <div class="nav-wrapper"> -->
+    <a href="#!" class="brand-logo"></a>
+    <ul class="right hide-on-med-and-down">
+
+      <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">What's Next?<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
+
+  <main ui-view></main>
+
+
+
+
+
+
+  <!--==========** MAIN FOOTER **===========-->
+    <footer class="index-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Company Bio</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <!--==========** FOOTER LINKS **===========-->
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Meet the owners</h5>
+            <ul>
+              <li><a class="white-text" href="https://www.linkedin.com/in/kellylunghamer" target="_blank">Kelly</a></li>
+              <li><a class="white-text" href="https://www.linkedin.com/in/zachretterath" target="_blank">Zach</a></li>
+              <li><a class="white-text" href="https://www.linkedin.com/in/seandavidrobbins" target="_blank">Sean</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+        </div>
 
 <!--FOOTER -->
       <div class="footer-wrapper">
@@ -51,9 +141,16 @@
           <a class="footInfo" href="/privacyPolicy"><div> PRIVACY POLICY </div></a>
           <a class="footInfo" href="/advertising"><div> ADVERTISE WITH US </div></a></p>
         </footer>
+
       </div>
+    </div>
 
-
-  <div class="copyright"><p>&copy; 2017 Wanderluster.com<p></div>
-  </body>
+    <!--==========** COPYRIGHT FOOTER **===========-->
+      <div class="footer-copyright">
+        <div class="container">
+        Created by <a class="brown-text text-lighten-3">Kelly, Zach, & Sean with love, determination, and some frustration</a>
+        </div>
+      </div>
+     </footer>
+    </body>
 </html>
