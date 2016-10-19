@@ -31,29 +31,19 @@
 
   <body>
 
-
-<!--HEADER -->
-  <div class="header-wrapper">
-    <header id="header">
-
-      <div ng-controller="usersController as users">
-        <div ng-hide="users.currentUser">
-          <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a>
-        </div>
-        <div ng-show="users.currentUser">
-          <a ui-sref="profile">Profile</a> | <a ng-click="users.logout(users.currentUser)">Log out</a>
-        </div>
-      </div>
-    </header>
-
   <!--==========**HEADER===========-->
     <nav class="teal">
     <div class="header-wrapper">
     <a href="#" class="brand-logo teal">WANDERLUSTER</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down teal">
-        <li><a ui-sref="signup">Sign up</a></li>
-        <li><a ui-sref="login">Log in</a></li>
-        <li> <a ui-sref="profile">Profile</a></li>
+      <ul id="nav-mobile" class="right hide-on-med-and-down teal" ng-controller="usersController as users">
+        <div ng-hide="users.currentUser">
+          <li><a ui-sref="signup">Sign up</a></li>
+          <li><a ui-sref="login">Log in</a></li>
+        </div>
+        <div ng-show="users.currentUser">
+          <li> <a ui-sref="profile">Profile</a></li>
+          <li><a ng-click="users.logout(users.currentUser)">Log out</a><li>
+        </div>
       </ul>
     </div>
   </nav>
