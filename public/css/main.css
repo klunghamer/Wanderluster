@@ -4,7 +4,15 @@
   border: 1px solid black;
   border-radius: 20px;
 }
+#cardCss {
+  border: 1px solid black;
+}
 
+#sandiego {
+  width:70%;
+  border: 1px solid black;
+  border-radius: 20px;
+}
 body {
   background: #DAE2F8; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #DAE2F8 , #D6A4A4); /* Chrome 10-25, Safari 5.1-6 */
@@ -23,14 +31,27 @@ body {
   width: 100%;
   margin-right: 20px;
 }
-#actionLinks {
+/*#actionLinks {
   text-align: center;
+}*/
+
+/* IE 6 */
+* html .page-footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
-footer.page-footer {
+.page-footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+}
+footer.index-footer {
   margin: 0;
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -850px;
   left: 0;
   padding: 1rem;
 }
