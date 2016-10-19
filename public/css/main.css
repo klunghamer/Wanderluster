@@ -1,25 +1,31 @@
 
 #logo {
-  width: 7%;
-  border: 1px solid black;
+  width: 4em;
+  height: 4em;
+  border: 3px solid rgba(184,255,207, .5);
   border-radius: 20px;
+  margin-left: 5px;
+}
+span.wanderText{
+  font-family: 'Bungee Inline', cursive;
+  font-size: 2em;
+  text-shadow: 2px 2px 6px black;
 }
 #cardCss {
   border: 1px solid black;
 }
 
-#sandiego {
-  width:70%;
-  border: 1px solid black;
-  border-radius: 20px;
-}
 body {
   background: #DAE2F8; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #DAE2F8 , #D6A4A4); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #DAE2F8 , #D6A4A4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: 'Bungee Inline', cursive;
+
 
 }
 #cliffdivePic {
+  margin: 0 auto;
+  right: 0;
   border: 3px solid white;
   border-radius: 20px;
   margin-right: 10px;
@@ -31,9 +37,6 @@ body {
   width: 100%;
   margin-right: 20px;
 }
-/*#actionLinks {
-  text-align: center;
-}*/
 
 /* IE 6 */
 * html .page-footer {
@@ -42,6 +45,7 @@ body {
 }
 .page-footer {
   position:fixed;
+  margin: 0 auto;
   left:0px;
   bottom:0px;
   height:30px;
@@ -51,7 +55,7 @@ footer.index-footer {
   margin: 0;
   position: absolute;
   right: 0;
-  bottom: -850px;
+  /*bottom: 0;*/
   left: 0;
   padding: 1rem;
 }
@@ -79,6 +83,7 @@ p {
     width: 100%;
   }
 
+
 #resize {
   width: 10vw;
 }
@@ -93,17 +98,12 @@ p {
   transform: scale(1.10);
 }*/
 
-@media only screen and (max-width : 992px) {
-  .custom-container .section {
-    position: absolute;
-    top: 40%;
-  }
   #index-banner .section {
     top: 10%;
   }
-}
 
-@media only screen and (max-width : 600px) {
+
+@media only screen and (max-width :800px) {
   #index-banner .section {
     top: 0;
   }

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/main.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
 <!--*********************************************-->
 <!--**************ANGULAR/JS/JQUERY**************-->
 <!--*********************************************-->
@@ -33,8 +34,9 @@
   <!--==========**HEADER===========-->
     <nav class="teal">
     <div class="header-wrapper">
-    <a href="#" class="brand-logo teal">WANDERLUSTER</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down teal" ng-controller="usersController as users">
+      <img id="logo" src="http://www.freeiconspng.com/uploads/baggage-icon-png-19.png"/>
+    <a href="#" class="brand-logo teal"><span class="wanderText">WANDERLUSTER</span></a>
+      <ul id="nav-mobile" class="right teal" ng-controller="usersController as users">
         <div ng-hide="users.currentUser">
           <li><a ui-sref="signup">Sign up</a></li>
           <li><a ui-sref="login">Log in</a></li>
@@ -48,7 +50,7 @@
   </nav>
 
 
-<!---======== SEARCH BAR=========-->
+<!---========== SEARCH BAR===========-->
 <nav>
    <div class="nav-wrapper">
      <form>
@@ -85,7 +87,7 @@
 <!--********** DROPDOWN TRIGGER *********** -->
 <nav>
   <a href="#!" class="brand-logo"></a>
-    <ul class="right hide-on-med-and-down">
+    <ul class="right">
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">What's Next?<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
   </div>
