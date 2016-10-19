@@ -99,7 +99,15 @@ router.delete('/delete/:placeId', function(req, res){
   // console.log("REQ BODY>>>>>>", req);
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user){
-    // console.log(user);
+    var place = user.placesToVisit.id(req.params.placeId);
+    place.remove();
+    return user.save();
+  })
+  .then(function(user){
+    res.json({ user : user });
+  })
+  .catch(function(err){
+    console.log(err);
   })
 })
 
