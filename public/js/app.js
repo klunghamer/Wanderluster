@@ -36,7 +36,10 @@
         })
         .state('editplace', {
           url: '/editplace',
-          templateUrl: '../partials/_editplace.html'
+          templateUrl: '../partials/_editplace.html',
+          params: {
+            place: null
+          }
         })
 
         $urlRouterProvider.otherwise('/');

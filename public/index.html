@@ -31,6 +31,20 @@
 
   <body>
 
+
+<!--HEADER -->
+  <div class="header-wrapper">
+    <header id="header">
+      <div ng-controller="usersController as users">
+        <div ng-hide="users.currentUser">
+          <a ui-sref="signup">Sign up</a> | <a ui-sref="login">Log in</a>
+        </div>
+        <div ng-show="users.currentUser">
+          <a ui-sref="profile">Profile</a> | <a href="#">Log out</a>
+        </div>
+      </div>
+    </header>
+
   <!--==========**HEADER===========-->
     <nav class="teal">
     <div class="header-wrapper">
@@ -94,6 +108,7 @@
 
 
 
+
   <!--==========** MAIN FOOTER **===========-->
     <footer class="index-footer teal">
       <div class="container">
@@ -114,6 +129,18 @@
           </div>
           <div class="col l3 s12">
         </div>
+
+<!--FOOTER -->
+      <div class="footer-wrapper">
+        <footer id="footer"><p>
+          <a class="footInfo" href="/home"><div> HOME  </div></a>
+          <a class="footInfo" href="/about"><div> ABOUT</div></a>
+          <a class="footInfo" href="/contact"><div> CONTACT US </div></a>
+          <a class="footInfo" href="/terms"><div> TERMS OF USE </div></a>
+          <a class="footInfo" href="/privacyPolicy"><div> PRIVACY POLICY </div></a>
+          <a class="footInfo" href="/advertising"><div> ADVERTISE WITH US </div></a></p>
+        </footer>
+
       </div>
     </div>
 
