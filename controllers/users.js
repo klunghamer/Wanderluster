@@ -111,10 +111,27 @@ router.delete('/delete/:placeId', function(req, res){
   })
 })
 
-
-
-
-
-
+//// MOVE TO VISITED ////
+router.put('/moveToVisited/:placeId', function(req, res){
+  // console.log("PLACE ID >>>>>", req.params.placeId);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user) {
+    var place = user.placesToVisit.id(req.params.placeId);
+    user.placesVisited.push(place);
+    for(var i = 0; i < user.placesToVisit.length; i++) {
+      if(user.placesToVisit[i].id === req.params.placeId) {
+        user.placesToVisit.splice(i, 1);
+      }
+    }
+    return user.save();
+  })
+  .then(function(user){
+    console.log(user);
+    res.json({ user : user });
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
 
 module.exports = router;

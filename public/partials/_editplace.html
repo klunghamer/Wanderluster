@@ -1,8 +1,5 @@
 
   <div ng-controller="usersController as users">
-    <p>
-      {{$state.params}}
-    </p>
     <div class="row">
       <form class="col s12" ng-submit="users.edit($state.params)">
         <div class="row">
@@ -38,5 +35,8 @@
       </form>
       <button type="submit" ng-click="users.delete($state.params)">
         Delete
+      </button>
+      <button type="submit" ng-click="users.addToVisited($state.params)">
+        Move
       </button>
     </div>
