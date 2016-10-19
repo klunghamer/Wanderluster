@@ -9,6 +9,7 @@ var User = require('../models/user');
 //   res.render('index')
 // })
 
+//// SIGN UP ////
 router.post('/signup', function(req,res) {
   console.log('signup');
   console.log(req.body);
@@ -27,6 +28,7 @@ router.post('/signup', function(req,res) {
   });
 })
 
+//// LOGIN ////
 router.post('/login', passport.authenticate('local'), function(req, res) {
   req.session.save(function (err) {
     if (err) return next(err);
@@ -40,6 +42,7 @@ router.delete('/logout', function (req,res) {
   res.json({status: 200});
 });
 
+//// ADD NEW PLACE ////
 router.post('/', function(req, res){
   // console.log(req.body);
   var user = req.session.passport.user;
@@ -56,7 +59,7 @@ router.post('/', function(req, res){
     return user[0].save();
   })
   .then(function(user) {
-    console.log('user>>>', user);
+    // console.log('user>>>', user);
     res.json({ user : user });
   })
   .catch(function(err) {
@@ -64,13 +67,14 @@ router.post('/', function(req, res){
   })
 })
 
+//// EDIT ////
 router.put('/:placeId', function(req, res){
   // console.log(req);
-  console.log('put req.body ', req.body);
+  // console.log('put req.body ', req.body);
   // console.log('placeId', req.params.placeId);
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user){
-    console.log(user);
+    // console.log(user);
     var place = user.placesToVisit.id(req.params.placeId);
     // console.log(req);
     // console.log('/////PALCE ', place);
@@ -83,7 +87,47 @@ router.put('/:placeId', function(req, res){
   })
   .then(function(user){
     res.json({ user : user });
-    console.log('user>>>', user);
+    // console.log('user>>>', user);
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
+
+//// DELETE ////
+router.delete('/delete/:placeId', function(req, res){
+  // console.log("REQ BODY>>>>>>", req);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user){
+    var place = user.placesToVisit.id(req.params.placeId);
+    place.remove();
+    return user.save();
+  })
+  .then(function(user){
+    res.json({ user : user });
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
+
+//// MOVE TO VISITED ////
+router.put('/moveToVisited/:placeId', function(req, res){
+  // console.log("PLACE ID >>>>>", req.params.placeId);
+  User.findOne({username: req.session.passport.user}).exec()
+  .then(function(user) {
+    var place = user.placesToVisit.id(req.params.placeId);
+    user.placesVisited.push(place);
+    for(var i = 0; i < user.placesToVisit.length; i++) {
+      if(user.placesToVisit[i].id === req.params.placeId) {
+        user.placesToVisit.splice(i, 1);
+      }
+    }
+    return user.save();
+  })
+  .then(function(user){
+    console.log(user);
+    res.json({ user : user });
   })
   .catch(function(err){
     console.log(err);
