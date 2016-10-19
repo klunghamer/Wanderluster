@@ -5,16 +5,8 @@
   function usersController($http, $state){
     var self = this;
 
-    // this.editedPlace = null;
-
-    // this.setPlaceToEdit = function(place) {
-    //   self.editedPlace = place;
-    //   console.log(this.editedPlace);
-    // }
-
     $http.get('/helpers/get-user')
       .then(function(response) {
-        // console.log(response)
         self.currentUser = response.data.user;
       })
       .catch(function(err){
@@ -28,9 +20,7 @@
         data: user
       })
       .then(function(response){
-        // console.log('res');
-        // console.log(response);
-        // self.user = response.data.user
+
         $state.go('login', {url: '/login'});
       })
       .catch(function(err){
@@ -39,17 +29,14 @@
     }
 
     this.login = function(user) {
-      // console.log(user);
       return $http({
         url: '/users/login',
         method: 'POST',
         data: user
       })
       .then(function(response) {
-        self.currentUser = response.data.user;
         $state.go('profile', {url: '/profile'});
         console.log('self', self);
-        // console.log(self.user.firstName);
       })
       .catch(function(err) {
         console.log(err);
@@ -67,13 +54,12 @@
       })
     }
 
-    this.add = function(vacation){
-      // console.log(vacation);
-        return $http({
-          url: '/users',
-          method: 'POST',
-          data: vacation
-        })
+    this.add = function(place){
+      return $http({
+        url: '/users',
+        method: 'POST',
+        data: place
+      })
       .then(function(response){
         console.log(response);
         $state.go('tovisit', {url: '/tovisit'});
@@ -83,20 +69,42 @@
       })
     }
 
+    this.delete = function(place){
+      return $http({
+        url: `/users/delete/${$state.params.place._id}`,
+        method: 'DELETE',
+        data: place
+      })
+      .then(function(response){
+        console.log(response);
+        $state.go('tovisit', {url: '/tovisit'});
+      })
+    }
+
     /// EDIT ///
     this.edit = function(place){
-      // console.log(place);
-      console.log($state.params.place);
-      // return $http.put(`/users/${$state.params.place._id}`, place)
       return $http({
         url: `/users/${$state.params.place._id}`,
         method: 'PUT',
         data: place
       })
       .then(function(response){
-        console.log(response);
         $state.go('tovisit', {url: '/tovisit'});
-        // console.log('id', place._id);
+      })
+      .catch(function(err) {
+        console.log(err);
+      })
+    }
+
+    this.addToVisited = function(place){
+      console.log($state.params.place);
+      return $http({
+        url: `/users/moveToVisited/${$state.params.place._id}`,
+        method: 'PUT',
+        data: place
+      })
+      .then(function(response){
+        $state.go('visited', {url: '/visited'});
       })
       .catch(function(err) {
         console.log(err);
