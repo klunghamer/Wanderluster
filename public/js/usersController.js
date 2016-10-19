@@ -67,12 +67,12 @@
       })
     }
 
-    this.add = function(vacation){
-      // console.log(vacation);
+    this.add = function(place){
+      // console.log(place);
       return $http({
         url: '/users',
         method: 'POST',
-        data: vacation
+        data: place
       })
       .then(function(response){
         console.log(response);
@@ -80,6 +80,20 @@
       })
       .catch(function(err) {
         console.log(err);
+      })
+    }
+
+    this.delete = function(place){
+      // console.log($state.params.place);
+      return $http({
+        url: `/users/${$state.params.place._id}`,
+        method: 'DELETE',
+        data: place
+      })
+      .then(function(response){
+        console.log(response);
+        $state.go('tovisit', {url: '/tovisit'});
+        // console.log('id', place._id);
       })
     }
 
