@@ -47,7 +47,7 @@
       })
       .then(function(response) {
         self.user = response.data.user;
-        $state.go('profile', {url: '/profile'}, {reload: true});
+        $state.go('profile', {url: '/profile'});
         console.log('self', self);
         // console.log(self.user.firstName);
       })
