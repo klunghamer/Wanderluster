@@ -56,7 +56,7 @@
 
     this.add = function(city){
       return $http({
-        url: 'https://api.openweathermap.org/data/2.5/weather',
+        url: 'http://api.openweathermap.org/data/2.5/weather',
         method: 'GET',
         params: {
           q: city,
@@ -104,7 +104,7 @@
     /// EDIT ///
     this.edit = function(city){
       return $http({
-        url: 'https://api.openweathermap.org/data/2.5/weather',
+        url: 'http://api.openweathermap.org/data/2.5/weather',
         method: 'GET',
         params: {
           q: city,
