@@ -9,6 +9,7 @@ var User = require('../models/user');
 //   res.render('index')
 // })
 
+//// SIGN UP ////
 router.post('/signup', function(req,res) {
   console.log('signup');
   console.log(req.body);
@@ -27,6 +28,7 @@ router.post('/signup', function(req,res) {
   });
 })
 
+//// LOGIN ////
 router.post('/login', passport.authenticate('local'), function(req, res) {
   req.session.save(function (err) {
     if (err) return next(err);
@@ -40,6 +42,7 @@ router.delete('/logout', function (req,res) {
   res.json({status: 200});
 });
 
+//// ADD NEW PLACE ////
 router.post('/', function(req, res){
   // console.log(req.body);
   var user = req.session.passport.user;
@@ -64,9 +67,10 @@ router.post('/', function(req, res){
   })
 })
 
+//// EDIT ////
 router.put('/:placeId', function(req, res){
   // console.log(req);
-  console.log('put req.body ', req.body);
+  // console.log('put req.body ', req.body);
   // console.log('placeId', req.params.placeId);
   User.findOne({username: req.session.passport.user}).exec()
   .then(function(user){
@@ -83,11 +87,16 @@ router.put('/:placeId', function(req, res){
   })
   .then(function(user){
     res.json({ user : user });
-    console.log('user>>>', user);
+    // console.log('user>>>', user);
   })
   .catch(function(err){
     console.log(err);
   })
+})
+
+//// DELETE ////
+router.delete('/:placeId', function(req, res){
+  console.log('delete is working');
 })
 
 module.exports = router;
