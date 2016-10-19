@@ -59,7 +59,7 @@ router.post('/', function(req, res){
     return user[0].save();
   })
   .then(function(user) {
-    console.log('user>>>', user);
+    // console.log('user>>>', user);
     res.json({ user : user });
   })
   .catch(function(err) {
