@@ -15,7 +15,7 @@
   <br>
   <br>
 
-  
+
 <div ng-controller="usersController as users" class="cityCards">
   <div ng-repeat="place in users.currentUser.placesToVisit">
     <div class="row">
@@ -29,7 +29,7 @@
                   <p>forecast: {{place.weatherDesc}}</p>
                   <p>current temperature: {{place.temp | number:0}}&deg </p>
                   <p>humidity: {{place.humidity}}%</p>
-                  <img id="resize" src="http://openweathermap.org/img/w/{{place.icon}}.png">
+                  <img id="resize" src="https://openweathermap.org/img/w/{{place.icon}}.png">
                   <a ui-sref="editplace({place:place})">
                     <button class="btn-large waves-effect waves-light teal lighten-1" type="submit">Edit</button>
                   </a>
