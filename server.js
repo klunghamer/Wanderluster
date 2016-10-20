@@ -41,6 +41,10 @@ db.once('open', function() {
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/wanderluster';
 mongoose.connect(mongoURI);
 
+//Config dotenv
+// require('dotenv').config();
+// const GOOGLE_KEY = process.env.GOOGLE_KEY;
+
 
 //Passport
 var passport = require('passport');

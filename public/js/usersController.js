@@ -13,6 +13,7 @@
         console.log('err', err)
       })
 
+
     this.createUser = function(user) {
       return $http({
         url: '/users/signup',
@@ -54,39 +55,42 @@
       })
     }
 
-    this.add = function(city){
+    this.add = function(result){
+      console.log(result);
+      var city = JSON.stringify(result);
+      console.log(city);
       return $http({
-        url: 'http://api.openweathermap.org/data/2.5/weather',
-        method: 'GET',
-        params: {
-          q: city,
-          appid: '74136e42b44bd02393d5ad566f3e74a3'
-        }
+        url: '/helpers/get-weather',
+        method: 'POST',
+        // data: 'atlanta'
       })
-      .then(function(city) {
-        var place = {};
-        place.city = city.data.name;
-        place.country = city.data.sys.country;
-        place.temp = (Number(city.data.main.temp) * 9/5) - 459.67;
-        place.weatherDesc = city.data.weather[0].description;
-        place.humidity = city.data.main.humidity;
-        place.icon = city.data.weather[0].icon;
-        return place;
-      })
-      .then(function(place){
-        return $http({
-          url: '/users',
-          method: 'POST',
-          data: place
-        })
-      })
-      .then(function(response){
+      .then(function(response) {
         console.log(response);
-        $state.go('tovisit', {url: '/tovisit'});
       })
-      .catch(function(err) {
-        console.log(err);
-      })
+      // .then(function(city) {
+      //   var place = {};
+      //   place.city = city.data.name;
+      //   place.country = city.data.sys.country;
+      //   place.temp = (Number(city.data.main.temp) * 9/5) - 459.67;
+      //   place.weatherDesc = city.data.weather[0].description;
+      //   place.humidity = city.data.main.humidity;
+      //   place.icon = city.data.weather[0].icon;
+      //   return place;
+      // })
+      // .then(function(place){
+      //   return $http({
+      //     url: '/users',
+      //     method: 'POST',
+      //     data: place
+      //   })
+      // })
+      // .then(function(response){
+      //   console.log(response);
+      //   $state.go('tovisit', {url: '/tovisit'});
+      // })
+      // .catch(function(err) {
+      //   console.log(err);
+      // })
     }
 
     this.delete = function(place){
