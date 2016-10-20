@@ -22,6 +22,11 @@ span.wanderText{
     flex-direction: column;
     align-items: center;
   }
+  #signupCss {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
 #cardCss {
   border: 10px solid rgba(38,166,160,.6);
