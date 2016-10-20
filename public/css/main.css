@@ -8,11 +8,29 @@
 }
 span.wanderText{
   font-family: 'Bungee Inline', cursive;
-  font-size: 2em;
+  font-size: 1em;
   text-shadow: 2px 2px 6px black;
 }
+#editDest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+#loginCss {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
 #cardCss {
-  border: 1px solid black;
+  border: 10px solid rgba(38,166,160,.6);
+  border-radius: 15px;
+  border-style: groove;
+  background: #43cea2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #43cea2 , #185a9d); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #43cea2 , #185a9d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
 }
 
 body {
@@ -21,21 +39,23 @@ body {
   background: linear-gradient(to left, #DAE2F8 , #D6A4A4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: 'Bungee Inline', cursive;
 
-
 }
 #cliffdivePic {
+  width: 41em;
   margin: 0 auto;
   right: 0;
-  border: 3px solid white;
-  border-radius: 20px;
+  border: 5px solid rgba(38,166,160,.6);
+  border-radius: 15px;
+  border-style: groove;
   margin-right: 10px;
 }
 
 #bikePic {
-  border: 3px solid white;
-  border-radius: 20px;
-  width: 100%;
-  margin-right: 20px;
+  border: 5px solid rgba(38,166,160,.6);
+  border-radius: 15px;
+  border-style: groove;
+  /*width: 100%;*/
+  margin-right: 50px;
 }
 
 /* IE 6 */
@@ -97,12 +117,9 @@ p {
 /*.cityCards:hover {
   transform: scale(1.10);
 }*/
-
   #index-banner .section {
     top: 10%;
   }
-
-
 @media only screen and (max-width :800px) {
   #index-banner .section {
     top: 0;

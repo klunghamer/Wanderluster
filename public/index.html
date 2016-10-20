@@ -33,9 +33,10 @@
 
   <!--==========**HEADER===========-->
     <nav class="teal">
-    <div class="header-wrapper">
+    <div class="header-wrapper col l6 s12">
+
       <img id="logo" src="http://www.freeiconspng.com/uploads/baggage-icon-png-19.png"/>
-    <a href="#" class="brand-logo teal"><span class="wanderText">WANDERLUSTER</span></a>
+    <a href="" class="brand-logo teal"><span class="wanderText">  WANDERLUSTER</span></a>
       <ul id="nav-mobile" class="right teal" ng-controller="usersController as users">
         <div ng-hide="users.currentUser">
           <li><a ui-sref="signup">Sign up</a></li>
@@ -50,6 +51,18 @@
   </nav>
 
 
+<<<<<<< HEAD
+<!--==============**ACTION LINKS**==============-->
+<!-- <div id="actionLinks">
+
+  <a ui-sref="tovisit">To Visit</a> | <a ui-sref="visited">Visited</a> |
+
+  <a ui-sref="profile">Profile</a> | <a ui-sref="addpage">Add Destination</a>
+
+</div> -->
+<br>
+<br>
+=======
 <!---========== SEARCH BAR===========-->
 <nav>
    <div class="nav-wrapper">
@@ -66,6 +79,7 @@
   <br>
 
 
+>>>>>>> 8ef8befeeb5d1d1dab1e04ca6b3aaa8aa2979a24
 <!--*********** Dropdown Structure/ACTION LINKS **************-->
 <ul id="dropdown1" class="dropdown-content">
   <li><a ui-sref="tovisit">To Visit</a></li>
@@ -78,7 +92,7 @@
 
 <!--********** DROPDOWN TRIGGER *********** -->
 <nav>
-  <a href="#!" class="brand-logo"></a>
+  <a ui-sref="home" class="brand-logo"></a>
     <ul class="right">
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">What's Next?<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>

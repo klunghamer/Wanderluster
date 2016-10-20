@@ -1,7 +1,25 @@
 <div ng-controller="usersController as users">
 
+  <h1>Welcome, <span ng-show="users.currentUser">{{users.currentUser.firstName}}</span></h1>
+
+  <!-- <form ng-submit="users.hometown(city)">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="city" type="text" class="validate" ng-model="city">
+        <label for="city">City</label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit">Home</button>
+  </form>
+</div> -->
+
+
+
+=======
+
   <h1>Welcome <span ng-show="users.currentUser">{{users.currentUser.firstName}}</span></h1>
   <h3>Add Some Content</h3>
+
 
 
 <!--==========** MAIN FOOTER **===========-->
