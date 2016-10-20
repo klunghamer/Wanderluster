@@ -34,9 +34,9 @@
   <!--==========**HEADER===========-->
     <nav class="teal">
     <div class="header-wrapper col l6 s12">
+      <a ui-sref="home"><img id='logo' src="http://www.freeiconspng.com/uploads/baggage-icon-png-19.png" title="Home" /></a>
 
-      <img id="logo" src="http://www.freeiconspng.com/uploads/baggage-icon-png-19.png"/>
-    <a href="" class="brand-logo teal"><span class="wanderText">  WANDERLUSTER</span></a>
+      <a ui-sref="home" class="brand-logo teal"><span class="wanderText">  WANDERLUSTER</span></a>
       <ul id="nav-mobile" class="right teal" ng-controller="usersController as users">
         <div ng-hide="users.currentUser">
           <li><a ui-sref="signup">Sign up</a></li>
@@ -49,6 +49,21 @@
       </ul>
     </div>
   </nav>
+
+
+
+<!--==============**ACTION LINKS**==============-->
+<!-- <div id="actionLinks">
+
+  <a ui-sref="tovisit">To Visit</a> | <a ui-sref="visited">Visited</a> |
+
+  <a ui-sref="profile">Profile</a> | <a ui-sref="addpage">Add Destination</a>
+
+</div> -->
+<br>
+<br>
+
+
 
 <!--*********** Dropdown Structure/ACTION LINKS **************-->
 <ul id="dropdown1" class="dropdown-content">

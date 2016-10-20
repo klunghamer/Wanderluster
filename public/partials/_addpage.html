@@ -1,5 +1,3 @@
-<h3>Add Destination</h3>
-
 <!-- <div ng-controller="usersController as users">
   <div class="row">
     <form class="col s12" ng-submit="users.add(vacation)">
@@ -35,12 +33,14 @@
       </button>
     </form>
   </div> -->
+  <div id="addCss">
 
+  <h3>Add Destination</h3>
   <div ng-controller="usersController as users">
 
     <form ng-submit="users.add(city)">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field">
           <input id="city" type="text" class="validate" ng-model="city">
           <label for="city">City</label>
         </div>
@@ -50,7 +50,7 @@
     </form>
   </div>
 
-
+</div>
 
 
   <!--==========** MAIN FOOTER **===========-->
