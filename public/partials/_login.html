@@ -1,14 +1,17 @@
-<h2 id="login">Login</h2>
 
+
+<div id="loginCss">
+
+<h2 id="login">Login</h2>
 
 <div id="container">
 <main id="center" class="column">
 
 <div ng-controller="usersController as users">
   <div class="row">
-    <form id="loginCss" class="col s6" ng-submit="users.login(user)">
+    <form  ng-submit="users.login(user)">
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s24">
           <input id="email" type="email" class="validate" ng-model="user.username">
           <label for="username">Email</label>
         </div>
@@ -27,7 +30,7 @@
  </div>
 </main>
 </div>
-
+</div>
 
 
 

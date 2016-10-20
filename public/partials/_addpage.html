@@ -37,6 +37,7 @@
   </div> -->
 
   <div ng-controller="usersController as users">
+
     <form ng-submit="users.add(city)">
       <div class="row">
         <div class="input-field col s6">
@@ -44,7 +45,8 @@
           <label for="city">City</label>
         </div>
       </div>
-      <button class="btn waves-effect waves-light" type="submit">Add</button>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit<i class="material-icons right">send</i>
+  </button>
     </form>
   </div>
 
