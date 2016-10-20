@@ -13,6 +13,7 @@
         console.log('err', err)
       })
 
+
     this.createUser = function(user) {
       return $http({
         url: '/users/signup',
@@ -54,14 +55,17 @@
       })
     }
 
-    this.add = function(city){
+    this.add = function(result){
+      var city = result;
       return $http({
-        url: 'http://api.openweathermap.org/data/2.5/weather',
-        method: 'GET',
-        params: {
-          q: city,
-          appid: '74136e42b44bd02393d5ad566f3e74a3'
-        }
+        url: '/helpers/get-weather',
+        method: 'POST',
+        data: {city: city},
+        headers: {'Content-Type': 'application/json'}
+      })
+      .then(function(response) {
+        console.log(response);
+        return response;
       })
       .then(function(city) {
         var place = {};
@@ -71,6 +75,7 @@
         place.weatherDesc = city.data.weather[0].description;
         place.humidity = city.data.main.humidity;
         place.icon = city.data.weather[0].icon;
+        console.log(place);
         return place;
       })
       .then(function(place){
@@ -103,13 +108,16 @@
 
     /// EDIT ///
     this.edit = function(city){
+      // var city = result;
       return $http({
-        url: 'http://api.openweathermap.org/data/2.5/weather',
-        method: 'GET',
-        params: {
-          q: city,
-          appid: '74136e42b44bd02393d5ad566f3e74a3'
-        }
+        url: '/helpers/get-weather',
+        method: 'POST',
+        data: {city: city},
+        headers: {'Content-Type': 'application/json'}
+      })
+      .then(function(response) {
+        console.log(response);
+        return response;
       })
       .then(function(city) {
         var place = {};
