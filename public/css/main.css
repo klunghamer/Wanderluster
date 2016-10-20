@@ -10,6 +10,7 @@ span.wanderText{
   font-family: 'Bungee Inline', cursive;
   font-size: 1em;
   text-shadow: 2px 2px 6px black;
+  padding: 1vw;
 }
 #editDest {
   display: flex;
@@ -132,6 +133,10 @@ p {
 @media only screen and (max-width :800px) {
   #index-banner .section {
     top: 0;
+  }
+
+  #homeWanderText {
+    font-size: 10vw;
   }
 }
 
