@@ -1,6 +1,24 @@
 <div ng-controller="usersController as users">
-
+  <div id="profileTitle">
   <h1>Welcome, <span ng-show="users.currentUser">{{users.currentUser.firstName}}</span></h1>
+  </div>
+  <div id="profileText">
+    <p>
+      Hello again, {{users.currentUser.firstName}}! Ready to plan your next adventure?
+      <br>
+      <br>
+      Visit the "What's Next" drop down menu to add cities that you would like to see, and review those you have seen! All locations display a live display of current weather conditions.
+      <br>
+      <br>
+      Want more? The team is developing a blog application so you can document your travels and share them with the rest of the world!
+      <br>
+      <br>
+      Have fun,
+      <br>
+      Sean, Kelly, and Zach
+    </p>
+  </div>
+
 
   <!-- <form ng-submit="users.hometown(city)">
     <div class="row">
