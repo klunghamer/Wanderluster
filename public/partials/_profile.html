@@ -1,19 +1,24 @@
 <div ng-controller="usersController as users">
-
+  <div id="profileTitle">
   <h1>Welcome, <span ng-show="users.currentUser">{{users.currentUser.firstName}}</span></h1>
-
-  <!-- <form ng-submit="users.hometown(city)">
-    <div class="row">
-      <div class="input-field col s6">
-        <input id="city" type="text" class="validate" ng-model="city">
-        <label for="city">City</label>
-      </div>
-    </div>
-    <button class="btn waves-effect waves-light" type="submit">Home</button>
-  </form>
-</div> -->
-
-
+  </div>
+  <div id="profileText">
+    <p>
+      Hello again, {{users.currentUser.firstName}}! Ready to plan your next adventure?
+      <br>
+      <br>
+      Visit the "What's Next" drop down menu to add cities that you would like to see, and review those you have seen! All locations contain a live display of current weather conditions.
+      <br>
+      <br>
+      Want more? A blogging component is in the works for you to document your travels and share them with the rest of the world!
+      <br>
+      <br>
+      Have fun,
+      <br>
+      Sean, Kelly, and Zach
+    </p>
+  </div>
+</div>
   <!--==========** MAIN FOOTER **===========-->
     <footer class="page-footer teal">
       <div class="container">
@@ -55,5 +60,4 @@
         Created by <a class="brown-text text-lighten-3">Kelly, Zach, & Sean with love, determination, and some frustration</a>
         </div>
       </div>
-     </footer>
-    </body>
+    </footer>

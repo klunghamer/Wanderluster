@@ -1,4 +1,17 @@
-
+#profileTitle{
+  text-align: left;
+  left: 10%;
+  position: relative;
+}
+#profileText {
+  color: white;
+  font-size: 2em;
+  text-align: left;
+  left: 10%;
+  right: 10%;
+  position: absolute;
+  /*font-weight: lighter;*/
+}
 #logo {
   width: 4em;
   height: 4em;
@@ -10,6 +23,7 @@ span.wanderText{
   font-family: 'Bungee Inline', cursive;
   font-size: 1em;
   text-shadow: 2px 2px 6px black;
+  padding: 1vw;
 }
 #editDest {
   display: flex;
@@ -49,6 +63,11 @@ body {
   font-family: 'Bungee Inline', cursive;
 
 }
+
+.pageContent{
+  margin-bottom: 1em;
+}
+
 #cliffdivePic {
   width: 41em;
   margin: 0 auto;
@@ -123,15 +142,21 @@ p {
   flex-wrap: wrap;
 }
 
-/*.cityCards:hover {
-  transform: scale(1.10);
-}*/
+#cardCss:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px 5px #888888;
+}
+
   #index-banner .section {
     top: 10%;
   }
 @media only screen and (max-width :800px) {
   #index-banner .section {
     top: 0;
+  }
+
+  #homeWanderText {
+    font-size: 10vw;
   }
 }
 
