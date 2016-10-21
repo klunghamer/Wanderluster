@@ -90,7 +90,8 @@ Place Schema:
 * icon: png file
 
 ## Unsolved Problems
-
+1. Because the controller is reinstantiated on each state, our login/logout ng-show/ng-hide only works on a page refresh.
+2. The weather shown is the current weather at that time and saved, so when you look back at it later it doesn't show the current weather but only the weather at which the element was created.
 ## Notes for the Future
 1. Add a blogging component to the app for user's to document their travel.
 2. Add update and delete logic to the places the user has visited.
