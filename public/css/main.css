@@ -35,13 +35,13 @@ span.wanderText{
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: .5em;
+  font-size: 1em;
   }
   #loginInput {
-    width: 55em;
+    width: 30em;
   }
   #addInput {
-    width: 35em;
+    width: 25em;
   }
 #signupCss {
   display: flex;
