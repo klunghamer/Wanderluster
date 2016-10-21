@@ -5,18 +5,15 @@
 
   <div id="container">
     <main id="center" class="column">
-
       <div ng-controller="usersController as users">
-        <div class="row">
-          <form  ng-submit="users.login(user)">
-            <div class="row">
-              <div class="input-field col s24">
+        <form id="loginInput"  ng-submit="users.login(user)">
+            <div class="input-field">
                 <input id="email" type="email" class="validate" ng-model="user.username">
                 <label for="username">Email</label>
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
+
+              <div class="input-field">
                 <input id="password" type="password" class="validate" ng-model="user.password">
                 <label for="password">Password</label>
               </div>
