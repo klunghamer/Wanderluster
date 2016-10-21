@@ -31,10 +31,17 @@ span.wanderText{
   align-items: center;
 
 }
-#loginCss {
+  #loginCss {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: .5em;
+  }
+  #loginInput {
+    width: 55em;
+  }
+  #addInput {
+    width: 35em;
   }
 #signupCss {
   display: flex;
