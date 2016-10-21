@@ -3,8 +3,7 @@
     <h3>Add Destination</h3>
       <div ng-controller="usersController as users">
 
-        <form ng-submit="users.add(city)">
-          <div class="row">
+        <form id="addInput" ng-submit="users.add(city)">
             <div class="input-field">
               <input id="city" type="text" class="validate" ng-model="city">
               <label for="city">City</label>
@@ -21,6 +20,5 @@
   <!--==========** MAIN FOOTER **===========-->
       <footer class="page-footer teal">
         <div class="container">
-          <div class="row">
             <div class="col l6 s12">
   </footer>
