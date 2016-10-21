@@ -38,6 +38,7 @@ Wanderluster uses the MEAN stack and all four http verbs for RESTful routing. It
   8.2. a button to delete the place,
     8.2.1.1. will remove the place,
     8.2.1.2. will be redirected to '/tovisit'.
+```
 
 ## Technologies
 -**Node.js**

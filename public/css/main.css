@@ -1,4 +1,15 @@
-
+#profileTitle{
+  text-align: center;
+}
+#profileText {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  left: 10%;
+  right: 10%;
+  position: absolute;
+  /*font-weight: lighter;*/
+}
 #logo {
   width: 4em;
   height: 4em;
@@ -124,9 +135,11 @@ p {
   flex-wrap: wrap;
 }
 
-/*.cityCards:hover {
-  transform: scale(1.10);
-}*/
+#cardCss:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px 5px #888888;
+}
+
   #index-banner .section {
     top: 10%;
   }
