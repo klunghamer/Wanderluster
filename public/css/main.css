@@ -63,6 +63,11 @@ body {
   font-family: 'Bungee Inline', cursive;
 
 }
+
+.pageContent{
+  margin-bottom: 1em;
+}
+
 #cliffdivePic {
   width: 41em;
   margin: 0 auto;
