@@ -1,10 +1,12 @@
 #profileTitle{
-  text-align: center;
+  text-align: left;
+  left: 10%;
+  position: relative;
 }
 #profileText {
   color: white;
   font-size: 2em;
-  text-align: center;
+  text-align: left;
   left: 10%;
   right: 10%;
   position: absolute;
